@@ -33,12 +33,12 @@
 
     <div class="item-area">
 
-      <a class="collection-button" class="existing-collection" href="#"></a>
-      <a class="collection-button" class="existing-collection" href="#"></a>
-      <a class="collection-button" class="new-collection" href="#"><img src="images/plus-sign.svg"><div class="arrow"></div></a>
+      <a class="collection-button existing-collection" href="#"></a>
+      <a class="collection-button existing-collection" href="#"></a>
+      <a class="collection-button new-collection" href="#"><img src="images/plus-sign.svg"><div class="arrow"></div></a>
 
       <!-- form appears here -->
-      <form class='form-horizontal' class='collectionDropdown' role='form'>
+      <form class='form-horizontal collectionDropdown' role='form'>
 
         <div class='form-group'>
 
@@ -115,13 +115,13 @@
     });
     */
 
-    $(".form-horizontal").hide();
+    $(".collectionDropdown").hide();
     $(".arrow").hide();
 
     var collFormIsExpanded = false;
-    var $newCollLink = $(".form-horizontal");
+    var $newCollLink = $(".collectionDropdown");
 
-    $(".collection-button").click(function() {
+    $(".new-collection").click(function() {
       if (collFormIsExpanded === false) {
         $newCollLink.show("fast");
         $(".arrow").show("fast");
