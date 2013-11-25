@@ -2,7 +2,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>My Parse App</title>
+  <title>Stuffology App</title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
@@ -33,9 +33,25 @@
 
     <div class="item-area">
 
-      <a class="collection-button existing-collection" href="#"><div class="arrow"></div></a>
-      <a class="collection-button existing-collection" href="#"><div class="arrow"></div></a>
-      <a class="collection-button new-collection" href="#"><img src="images/plus-sign.svg"><div class="arrow"></div></a>
+      <a class="collection-button existing-collection" href="#">
+        <div class="wrapper">
+          <p class="collection-name">I do not exist yet!</p>
+          <p class="item-count">Items: 0</p>
+          <p class="edit-link">Edit</p>
+        </div>
+        <div class="arrow"></div>
+      </a>
+      <a class="collection-button existing-collection" href="#">
+        <div class="wrapper">
+          <p class="collection-name">I do not exist yet!</p>
+          <p class="item-count">Items: 0</p>
+          <p class="edit-link">Edit</p>
+        </div>
+        <div class="arrow"></div>
+      </a>
+      <a class="collection-button new-collection" href="#">
+        <img src="images/plus-sign.svg"><div class="arrow"></div>
+      </a>
 
       <!-- form appears here -->
       <form class='form-horizontal collectionDropdown newCollectionForm' role='form'>
@@ -111,7 +127,7 @@
       alert("You have successfully created\na new collection named " + thisCollectionName);
 
       /* adds collection icon representing new collection */
-      $('.new-collection').before("<a class='collection-button existing-collection' href='#'><div class='arrow'></div></a>");
+      $('.new-collection').before("<a class='collection-button existing-collection' href='#'><p class='collection-name'>I do not exist yet!</p><p class='item-count'>Items: 0</p><p class='edit-link'>Edit</p><div class='arrow'></div></a>");
       $('a.existing-collection div.arrow').hide();
 
 
@@ -132,7 +148,7 @@
     */
 
     $(".collectionDropdown").hide();
-    $(".arrow").hide();
+    /*$(".arrow").hide();*/
 
 
     /*------------ New Collection Form Handler ------------*/

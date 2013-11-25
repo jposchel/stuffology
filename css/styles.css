@@ -3,7 +3,12 @@ div.item-area {
 }
 
 a.collection-button {
-	display: inline-block;
+	border: 1px solid red;
+	/*display: inline-block;*/
+	display: block;
+	float: left;
+	text-align: center;
+	text-decoration: none;
 	background-color: #000;
 	height: 200px;
 	width: 200px;
@@ -17,12 +22,12 @@ a.collection-button img {
 	margin-left: 28px;
 }
 
+div.wrapper {}
+
 a.collection-button div.arrow {
-	position: absolute;
 	width: 14px;
 	height: 14px;
 	margin-left: 94px;
-	margin-top: 36px;
 	background-color: #d2d2d2;
 	-webkit-transform: rotate(45deg); /* Chrome & Safari */
     -moz-transform: rotate(45deg); /* Firefox */
@@ -31,11 +36,35 @@ a.collection-button div.arrow {
     transform: rotate(45deg); /* CSS3 */
 }
 
+a.new-collection div.arrow {
+	margin-top: 36px;
+}
+
+a.existing-collection {
+
+}
+
 a.existing-collection div.arrow {
-	margin-top: 208px;
+	margin-top: 115px;
+}
+
+a.existing-collection p.collection-name {
+	color: #FFFFFF;
+	font-size: 20px;
+}
+
+a.existing-collection p.item-count {
+	color: #FFFFFF;
+	font-size: 16px;
+}
+
+a.existing-collection p.edit-link {
+	color: #FFD119;
+	font-size: 16px;
 }
 
 form.form-horizontal {
+	clear: both;
 	border-right: 2px solid #bebebe;
 	border-bottom: 2px solid #bebebe;
 	background-color: #d2d2d2;
