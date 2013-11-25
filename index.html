@@ -33,8 +33,8 @@
 
     <div class="item-area">
 
-      <a class="collection-button existing-collection" href="#"></a>
-      <a class="collection-button existing-collection" href="#"></a>
+      <a class="collection-button existing-collection" href="#"><div class="arrow"></div></a>
+      <a class="collection-button existing-collection" href="#"><div class="arrow"></div></a>
       <a class="collection-button new-collection" href="#"><img src="images/plus-sign.svg"><div class="arrow"></div></a>
 
       <!-- form appears here -->
@@ -86,6 +86,8 @@
     
     Parse.initialize("FPOlmLXJUEua1HOYMHHN8TPCvtlouzpj9LSzjMh0", "bh2d38avzROSyB9JzQa68tVtu3VnhZcXsdbTejl9");
     
+    /*------------ Create New Collection ------------*/
+
     $('#btnCreateCollection').click(function() {
       // create a collection
       var Collection = Parse.Object.extend("Collection");
@@ -107,6 +109,15 @@
       $('#inputCollectionDesc').val("");
 
       alert("You have successfully created\na new collection named " + thisCollectionName);
+
+      /* adds collection icon representing new collection */
+      $('.new-collection').before("<a class='collection-button existing-collection' href='#'><div class='arrow'></div></a>");
+      $('a.existing-collection div.arrow').hide();
+
+
+
+
+
       return false;
     });
 
@@ -123,17 +134,20 @@
     $(".collectionDropdown").hide();
     $(".arrow").hide();
 
+
+    /*------------ New Collection Form Handler ------------*/
+
     var collFormIsExpanded = false;
-    var $newCollLink = $(".collectionDropdown");
+    var $newCollLink = $(".newCollectionForm");
 
     $(".new-collection").click(function() {
       if (collFormIsExpanded === false) {
         $newCollLink.show("fast");
-        $(".arrow").show("fast");
+        $("a.new-collection div.arrow").show("fast");
         collFormIsExpanded = true;
       } else {
         $newCollLink.hide("fast");
-        $(".arrow").hide("fast");
+        $("a.new-collection div.arrow").hide("fast");
         collFormIsExpanded = false;
 
         /* resets form fields to blank */
