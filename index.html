@@ -118,19 +118,18 @@
     $(".form-horizontal").hide();
     $(".arrow").hide();
 
-    var newCollIsExpanded = false;
+    var collFormIsExpanded = false;
+    var $newCollLink = $(".form-horizontal");
 
     $(".collection-button").click(function() {
-      if (newCollIsExpanded === false) {
-        var $link = $(this);
-        $link.next().show("fast");
+      if (collFormIsExpanded === false) {
+        $newCollLink.show("fast");
         $(".arrow").show("fast");
-        newCollIsExpanded = true;
+        collFormIsExpanded = true;
       } else {
-        var $link = $(this);
-        $link.next().hide("fast");
+        $newCollLink.hide("fast");
         $(".arrow").hide("fast");
-        newCollIsExpanded = false;
+        collFormIsExpanded = false;
       }
       return false;
     });
