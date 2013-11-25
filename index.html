@@ -38,7 +38,7 @@
       <a class="collection-button new-collection" href="#"><img src="images/plus-sign.svg"><div class="arrow"></div></a>
 
       <!-- form appears here -->
-      <form class='form-horizontal collectionDropdown' role='form'>
+      <form class='form-horizontal collectionDropdown newCollectionForm' role='form'>
 
         <div class='form-group'>
 
@@ -101,6 +101,11 @@
       collection.set("collectionDesc", thisCollectionDesc);
       collection.save();
 
+      /* resets form fields to blank */
+      $('#inputCollectionName').val(""); 
+      $('#inputCollectionType').val("");
+      $('#inputCollectionDesc').val("");
+
       alert("You have successfully created\na new collection named " + thisCollectionName);
       return false;
     });
@@ -130,6 +135,11 @@
         $newCollLink.hide("fast");
         $(".arrow").hide("fast");
         collFormIsExpanded = false;
+
+        /* resets form fields to blank */
+        $('#inputCollectionName').val(""); 
+        $('#inputCollectionType').val("");
+        $('#inputCollectionDesc').val("");
       }
       return false;
     });
