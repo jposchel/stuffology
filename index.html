@@ -16,9 +16,6 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
   
-  
-  
-  
   <meta name="description" content="My Parse App">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="css/reset.css">
@@ -30,48 +27,55 @@
 
 <body>
   
-     	<div class="container">
+  <div class="container">
 
-  		<h1>Stuffology</h1>
+    <h1>Stuffology</h1>
 
-		<a class="collection-button" class="existing-collection" href="#"></a>
-		<a class="collection-button" class="existing-collection" href="#"></a>
-		<a class="collection-button" class="new-collection" href="#"></a>
+    <div class="item-area">
 
-    <form class="form-horizontal" role="form">
+      <a class="collection-button" class="existing-collection" href="#"></a>
+      <a class="collection-button" class="existing-collection" href="#"></a>
+      <a class="collection-button" class="new-collection" href="#"><img src="images/plus-sign.svg"><div class="arrow"></div></a>
 
-      <div class="form-group">
+      <!-- form appears here -->
+      <form class='form-horizontal' class='collectionDropdown' role='form'>
 
-        <div class="col-sm-offset-2 col-sm-7">
-          <label for="inputCollectionName" class="control-label">Name this collection</label>
-          <input type="text" class="form-control" id="inputCollectionName" placeholder="Collection Name">
+        <div class='form-group'>
+
+          <div class='col-sm-offset-2 col-sm-7'>
+            <label for='inputCollectionName' class='control-label'>Name this collection</label>
+            <input type='text' class='form-control' id='inputCollectionName' placeholder='Collection Name'>
+          </div>
         </div>
-      </div>
 
-      <div class="form-group">
+        <div class='form-group'>
 
-        <div class="col-sm-offset-2 col-sm-7">
-          <label for="inputCollectionType" class="control-label">Specify a collection kind</label>
-          <input type="text" class="form-control" id="inputCollectionType" placeholder="What kind of stuff will this collection hold?">
+          <div class='col-sm-offset-2 col-sm-7'>
+            <label for='inputCollectionType' class='control-label'>Specify a collection kind</label>
+            <input type='text' class='form-control' id='inputCollectionType' placeholder='What kind of stuff will this collection hold?'>
+          </div>
         </div>
-      </div>
 
-      <div class="form-group">
+        <div class='form-group'>
 
-        <div class="col-sm-offset-2 col-sm-7">
-          <label for="inputCollectionDesc" class="control-label">Describe this collection</label>
-          <input type="text" class="form-control" id="inputCollectionDesc" placeholder="A brief sentence or phrase works best">
+          <div class='col-sm-offset-2 col-sm-7'>
+            <label for='inputCollectionDesc' class='control-label'>Describe this collection</label>
+            <input type='text' class='form-control' id='inputCollectionDesc' placeholder='A brief sentence or phrase works best'>
+          </div>
         </div>
-      </div>
 
-      <div class="form-group">
+        <div class='form-group'>
 
-        <div class="col-sm-offset-2 col-sm-7">
-          <button type="submit" class="btn btn-default" id="btnCreateCollection">Create Collection</button>
+          <div class='col-sm-offset-2 col-sm-7'>
+            <button type='submit' class='btn btn-default' id='btnCreateCollection'>Create Collection</button>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
 
+
+    </div>
+	
+</div>
 
   <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -83,7 +87,6 @@
     Parse.initialize("FPOlmLXJUEua1HOYMHHN8TPCvtlouzpj9LSzjMh0", "bh2d38avzROSyB9JzQa68tVtu3VnhZcXsdbTejl9");
     
     $('#btnCreateCollection').click(function() {
-
       // create a collection
       var Collection = Parse.Object.extend("Collection");
       var collection = new Collection();
@@ -96,20 +99,42 @@
       collection.set("collectionName", thisCollectionName);
       collection.set("collectionType", thisCollectionType);
       collection.set("collectionDesc", thisCollectionDesc);
-
       collection.save();
 
-      
       alert("You have successfully created\na new collection named " + thisCollectionName);
-      
-
-      // clear the data in the forms
-
       return false;
+    });
 
+    /*
+    $(".order_form").hide().before("<a href='#' class='order_now'>Order Now</a>");
+    $(".order_now").click(function() {
+      var $link = $(this);
+      $link.nex().show("slow");
+      $link.remove();
+      return false;
+    });
+    */
+
+    $(".form-horizontal").hide();
+    $(".arrow").hide();
+
+    var newCollIsExpanded = false;
+
+    $(".collection-button").click(function() {
+      if (newCollIsExpanded === false) {
+        var $link = $(this);
+        $link.next().show("fast");
+        $(".arrow").show("fast");
+        newCollIsExpanded = true;
+      } else {
+        var $link = $(this);
+        $link.next().hide("fast");
+        $(".arrow").hide("fast");
+        newCollIsExpanded = false;
+      }
+      return false;
     });
       
-
   </script>
 
 </body>

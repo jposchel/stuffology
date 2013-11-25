@@ -1,3 +1,7 @@
+div.item-area {
+	float: right;
+}
+
 a.collection-button {
 	display: inline-block;
 	background-color: #000;
@@ -5,4 +9,30 @@ a.collection-button {
 	width: 200px;
 	margin: 10px;
 	border-radius: 5px;
+}
+
+a.collection-button img {
+	display: block;
+	margin-top: 28px;
+	margin-left: 28px;
+}
+
+div.arrow {
+	position: absolute;
+	width: 14px;
+	height: 14px;
+	margin-left: 94px;
+	margin-top: 36px;
+	background-color: #d2d2d2;
+	-webkit-transform: rotate(45deg); /* Chrome & Safari */
+    -moz-transform: rotate(45deg); /* Firefox */
+    -ms-transform: rotate(45deg); /* IE 9+ */
+    -o-transform: rotate(45deg); /* Opera */
+    transform: rotate(45deg); /* CSS3 */
+}
+
+form.form-horizontal {
+	border-right: 2px solid #bebebe;
+	border-bottom: 2px solid #bebebe;
+	background-color: #d2d2d2;
 }
