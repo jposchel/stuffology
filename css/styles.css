@@ -1,10 +1,31 @@
-div.item-area {
-	float: right;
+header {
+	margin-top: 20px;
+}
+
+header div.main-logo {
+	width: 375px;
+	height: 70px;
+	background: url("../images/stuffology-logo-color.svg");
+	background-size: 100%;
+	overflow: hidden;
+}
+
+header div.main-logo h1 {
+	margin-left: -999999999px;
+}
+
+header div.collection-path {
+	border-top: 3px solid #13a89e;
+	margin-top: 20px;
+	padding: 10px;
+	font-size: 20px;
+}
+
+header div.collection-path a {
+	color: #13a89e;
 }
 
 a.collection-button {
-	border: 1px solid red;
-	/*display: inline-block;*/
 	display: block;
 	float: left;
 	text-align: center;
@@ -45,10 +66,11 @@ a.existing-collection {
 }
 
 a.existing-collection div.arrow {
-	margin-top: 115px;
+	margin-top: 20px;
 }
 
 a.existing-collection p.collection-name {
+	margin-top: 80px;
 	color: #FFFFFF;
 	font-size: 20px;
 }
@@ -59,17 +81,25 @@ a.existing-collection p.item-count {
 }
 
 a.existing-collection p.edit-link {
-	color: #FFD119;
-	font-size: 16px;
+	margin-top: 30px;
+	color: #464646;
+	font-size: 12px;
 }
 
 form.form-horizontal {
 	clear: both;
+	min-height: 330px;
+	margin-top: 225px;
+	padding-top: 30px;
 	border-right: 2px solid #bebebe;
 	border-bottom: 2px solid #bebebe;
 	background-color: #d2d2d2;
 }
 
 .item-area {
-	max-width: 60%;
+	max-width: 100%;
+	min-height: 1000px;
+	border: 1px solid #bebebe;
+	border-radius: 3px;
+	padding: 20px;
 }
