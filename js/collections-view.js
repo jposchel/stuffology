@@ -5,7 +5,7 @@ $(document).ready(function(){
     Parse.initialize("FPOlmLXJUEua1HOYMHHN8TPCvtlouzpj9LSzjMh0", "bh2d38avzROSyB9JzQa68tVtu3VnhZcXsdbTejl9");
 
     // This is the HTML template for a collection item
-    // The template system is provdide by underscore.js
+    // The template system is called handlebars and provdide by underscore.js
     // See here for more info: http://underscorejs.org/#template
     var collectionTemplate = " \
     <div class='col-md-3 col-sm-6 collection-item <%= collectionType %>'> \
@@ -21,11 +21,11 @@ $(document).ready(function(){
     var query = new Parse.Query(CollectionObject);
     query.notEqualTo("collectionName", "") // exclude collections w/ no name set
     query.find().then(function(results){
-        // loop through each colleciton in the results
+        // loop through each colleciton in the results (an array)
         for (i=0;i<results.length;++i) {
-            var collection = results[i]
-            // Render the HTNL using the model data and the handlebars template
-            var collectionHTML = _.template(collectionTemplate, collection.attributes)
+            var collection = results[i];
+            // Render the HTML using the model data and the handlebars template
+            var collectionHTML = _.template(collectionTemplate, collection.attributes);
             // Add the rendered collection to the container
             $("#collection-grid").append(collectionHTML);
         }
