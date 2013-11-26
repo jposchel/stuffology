@@ -21,7 +21,7 @@ $(document).ready(function(){
     var query = new Parse.Query(CollectionObject);
     query.notEqualTo("collectionName", "") // exclude collections w/ no name set
     query.find().then(function(results){
-        // loop through each colleciton in the results (an array)
+        // loop through each collection in the results (an array)
         for (i=0;i<results.length;++i) {
             var collection = results[i];
             // Render the HTML using the model data and the handlebars template
