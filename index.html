@@ -34,7 +34,7 @@
 
     </header>
 
-    <div class="item-area">
+    <div id="collection-grid" class="row">
 
       <a class="collection-button existing-collection" href="#">
         <div class="wrapper">
@@ -97,10 +97,12 @@
 </div>
 
   <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://code.jquery.com/jquery.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/collections-view.js"></script>
   <script type="text/javascript">
     
     Parse.initialize("FPOlmLXJUEua1HOYMHHN8TPCvtlouzpj9LSzjMh0", "bh2d38avzROSyB9JzQa68tVtu3VnhZcXsdbTejl9");
@@ -130,8 +132,8 @@
       alert("You have successfully created\na new collection named " + thisCollectionName);
 
       /* adds collection icon representing new collection */
-      $('.new-collection').before("<a class='collection-button existing-collection' href='#'><p class='collection-name'>I do not exist yet!</p><p class='item-count'>Items: 0</p><p class='edit-link'>Edit</p><div class='arrow'></div></a>");
-      $('a.existing-collection div.arrow').hide();
+      /* $('.new-collection').before("<a class='collection-button existing-collection' href='#'><p class='collection-name'>I do not exist yet!</p><p class='item-count'>Items: 0</p><p class='edit-link'>Edit</p><div class='arrow'></div></a>");
+      $('a.existing-collection div.arrow').hide(); */
 
 
 

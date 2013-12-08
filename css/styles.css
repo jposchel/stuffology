@@ -96,7 +96,7 @@ form.form-horizontal {
 	background-color: #d2d2d2;
 }
 
-.item-area {
+#collection-grid {
 	max-width: 100%;
 	min-height: 1000px;
 	border: 1px solid #bebebe;

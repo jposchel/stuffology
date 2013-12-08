@@ -9,9 +9,9 @@ $(document).ready(function(){
     // See here for more info: http://underscorejs.org/#template
     var collectionTemplate = " \
     <div class='col-md-3 col-sm-6 collection-item <%= collectionType %>'> \
-        <a href='#' class='thumbnail'> \
-            <h1><%= collectionName %></h1> \
-            <h3><%= collectionType %></h3> \
+        <a href='#' class='thumbnail collection-button existing-collection'> \
+            <h1 class='collection-name'><%= collectionName %></h1> \
+            <h3 class='item-count'><%= collectionType %></h3> \
             <p><%= collectionDesc %></p> \
         </a> \
     </div>"
