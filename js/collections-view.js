@@ -10,11 +10,25 @@ $(document).ready(function(){
     var collectionTemplate = " \
     <div class='col-md-3 col-sm-6 collection-item <%= collectionType %>'> \
         <a href='#' class='thumbnail collection-button existing-collection'> \
-            <h1 class='collection-name'><%= collectionName %></h1> \
-            <h3 class='item-count'><%= collectionType %></h3> \
-            <p><%= collectionDesc %></p> \
+            <h1 class='thumbnail-attribute thumbnail-name'><%= collectionName %></h1> \
+            <h3 class='thumbnail-attribute thumbnail-type'><%= collectionType %></h3> \
+            <h3 class='thumbnail-attribute thumbnail-count'>Items: 0</h3> \
+            <p class='thumbnail-attribute thumbnail-desc'><%= collectionDesc %></p> \
         </a> \
-    </div>"
+    </div> \
+    <div class='arrow'></div>"
+
+    // ----------------- original template -----------------
+    /*var collectionTemplate = " \
+    <div class='col-md-3 col-sm-6 collection-item <%= collectionType %>'> \
+        <a href='#' class='thumbnail collection-button existing-collection'> \
+            <h1 class='collection-name'><%= collectionName %></h1> \
+            <h1 class='thumbnail-attribute thumbnail-name'><%= collectionName %></h1> \
+            <h3 class='item-count'><%= collectionType %></h3> \
+            <p class='edit-link'><%= collectionDesc %></p> \
+        </a> \
+    </div> \
+    <div class='arrow'></div>"*/
 
     // Load the collections from Parse
     var CollectionObject = Parse.Object.extend("Collection");

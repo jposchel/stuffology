@@ -29,10 +29,7 @@ a.collection-button {
 	display: block;
 	float: left;
 	text-align: center;
-	text-decoration: none;
 	background-color: #000;
-	height: 200px;
-	width: 200px;
 	margin: 10px;
 	border-radius: 5px;
 }
@@ -69,19 +66,17 @@ a.existing-collection div.arrow {
 	margin-top: 20px;
 }
 
-a.existing-collection p.collection-name {
-	margin-top: 80px;
+a.existing-collection h1.thumbnail-attribute {
 	color: #FFFFFF;
 	font-size: 20px;
 }
 
-a.existing-collection p.item-count {
+a.existing-collection h3.thumbnail-attribute {
 	color: #FFFFFF;
 	font-size: 16px;
 }
 
-a.existing-collection p.edit-link {
-	margin-top: 30px;
+a.existing-collection p.thumbnail-attribute {
 	color: #464646;
 	font-size: 12px;
 }
