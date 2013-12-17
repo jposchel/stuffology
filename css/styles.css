@@ -26,8 +26,6 @@ header div.collection-path a {
 }
 
 a.collection-button {
-	display: block;
-	float: left;
 	text-align: center;
 	background-color: #000;
 	margin: 10px;
@@ -97,4 +95,9 @@ form.form-horizontal {
 	border: 1px solid #bebebe;
 	border-radius: 3px;
 	padding: 20px;
+}
+
+#collection-grid > div {
+	height: 200px;
+
 }
