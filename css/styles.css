@@ -108,7 +108,7 @@ form.form-horizontal {
 
 .white-popup {
   position: relative;
-  background: #FFF;
+  background: red;
   padding: 20px;
   width: auto;
   max-width: 500px;

@@ -19,8 +19,12 @@ $(document).ready(function(){
         }
     });
 
+    $(".collectionDropdown").hide();
+    
     // if you want the popup to showup when page opens
     /*$('.image-link').magnificPopup({type:'image'});*/
+
+
 });
 
 // skateboard photo popup
@@ -132,10 +136,10 @@ $(".new-collection").click(function() {
 
 /*------------ Delete Collection ------------*/
 
-$('.btnDeleteCollection').click(function() {
+/*$('.btnDeleteCollection').click(function() {*/
 
     /* create a collection */
-    var Collection = Parse.Object.extend("Collection");
+    /*var Collection = Parse.Object.extend("Collection");
     var query = new Parse.Query(Collection);
     query.get("xWMyZ4YEGZ", {
       success: function(gameScore) {
@@ -175,4 +179,4 @@ $('.btnDeleteCollection').click(function() {
     renderCollectionThumbnail(collection);
 
     return false;
-});
+});*/
