@@ -19,17 +19,33 @@ $(document).ready(function(){
         }
     });
 
+    // if you want the popup to showup when page opens
+    /*$('.image-link').magnificPopup({type:'image'});*/
 });
+
+// skateboard photo popup
+$('.test-popup-link').magnificPopup({ 
+  type: 'image'
+    // other options
+});
+
+// form popup
+$('.open-popup-link').magnificPopup({
+  type:'inline',
+  midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+});
+
 
 
 function renderCollectionThumbnail(collectionModel) {
 	var collectionTemplate = " \
     <div class='col-md-3 col-sm-6'> \
-        <a href='#' class='thumbnail'> \
+        <a href='images/gallery25-2.jpg' class='thumbnail test-popup-link'> \
             <h1 class='thumbnail-attribute thumbnail-name'><%= collectionName %></h1> \
             <h3 class='thumbnail-attribute thumbnail-type'><%= collectionType %></h3> \
             <h3 class='thumbnail-attribute thumbnail-count'>Items: 0</h3> \
             <p class='thumbnail-attribute thumbnail-desc'><%= collectionDesc %></p> \
+            <p class='thumbnaile-attribute btnDeleteCollection'>Delete Me</p> \
         </a> \
         <div class='arrow'></div> \
     </div>"
@@ -112,4 +128,51 @@ $(".new-collection").click(function() {
     $('#inputCollectionDesc').val("");
   }
   return false;
+});
+
+/*------------ Delete Collection ------------*/
+
+$('.btnDeleteCollection').click(function() {
+
+    /* create a collection */
+    var Collection = Parse.Object.extend("Collection");
+    var query = new Parse.Query(Collection);
+    query.get("xWMyZ4YEGZ", {
+      success: function(gameScore) {
+        // The object was retrieved successfully.
+      },
+      error: function(object, error) {
+        // The object was not retrieved successfully.
+        // error is a Parse.Error with an error code and description.
+      }
+    });
+
+    var GameScore = Parse.Object.extend("GameScore");
+    var query = new Parse.Query(GameScore);
+    query.get("xWMyZ4YEGZ", {
+      success: function(gameScore) {
+        // The object was retrieved successfully.
+      },
+      error: function(object, error) {
+        // The object was not retrieved successfully.
+        // error is a Parse.Error with an error code and description.
+      }
+    });
+
+    myObject.destroy({
+      success: function(myObject) {
+        // The object was deleted from the Parse Cloud.
+      },
+      error: function(myObject, error) {
+        // The delete failed.
+        // error is a Parse.Error with an error code and description.
+      }
+    });
+     
+    // Saves the field deletion to the Parse Cloud
+    collection.save();
+
+    renderCollectionThumbnail(collection);
+
+    return false;
 });
